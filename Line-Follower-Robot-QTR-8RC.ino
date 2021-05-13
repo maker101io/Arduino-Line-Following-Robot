@@ -70,21 +70,21 @@ qtrrc.calibrate(QTR_EMITTERS_ON);
 delay(20);
 }
   
-if (DEBUG) {
-Serial.begin(9600);
-for (int i = 0; i < NUM_SENSORS; i++)
-{
-Serial.print(qtrrc.calibratedMinimumOn[i]);
-Serial.print(' ');
-}
-Serial.println();
+#ifdef DEBUG
+    Serial.begin(9600);
+    for (int i = 0; i < NUM_SENSORS; i++)
+    {
+        Serial.print(qtrrc.calibratedMinimumOn[i]);
+        Serial.print(' ');
+    }
+    Serial.println();
   
-for (int i = 0; i < NUM_SENSORS; i++)
-{
-Serial.print(qtrrc.calibratedMaximumOn[i]);
-Serial.print(' ');
-}
-Serial.println();
-Serial.println();
-}
+    for (int i = 0; i < NUM_SENSORS; i++)
+    {
+        Serial.print(qtrrc.calibratedMaximumOn[i]);
+        Serial.print(' ');
+    }
+    Serial.println();
+    Serial.println();
+#endif
 }
